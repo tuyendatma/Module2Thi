@@ -55,7 +55,7 @@ public class PhoneBookManager {
     public void deletePhoneBook(List<PhoneBook> phoneBookList){
         int index;
         do {
-            System.out.println("nhap vi tri index can cap nhat");
+            System.out.println("nhap vi tri index can xoa");
             index = scanner.nextInt();
         }while (index>= phoneBookList.size() );
        phoneBookList.remove(index);
@@ -79,12 +79,11 @@ public class PhoneBookManager {
             }else {
                 check = false;
             }
-            if (check){
-                System.out.println(phoneBookList.get(index).toString());
-            }else {
-                System.out.println("khong co ten ban tim");
-            }
-
+        }
+        if (check){
+            System.out.println(phoneBookList.get(index).toString());
+        }else {
+            System.out.println("khong co ten ban tim");
         }
     }
 }
