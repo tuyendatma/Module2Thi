@@ -9,6 +9,7 @@ public class PhoneBookManager {
         int phoneNumber;
         System.out.println("moi nhap so dien thoai");
         phoneNumber = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("moi nhap dia chi");
         String address = scanner.nextLine();
         System.out.println("moi nhap email:");
@@ -26,7 +27,7 @@ public class PhoneBookManager {
         do {
             System.out.println("nhap vi tri index can cap nhat");
             index = scanner.nextInt();
-        }while (index< phoneBookList.size() );
+        }while (index>= phoneBookList.size() );
         System.out.println("nhap ten can sua:");
         String name = scanner.nextLine();
         System.out.println("moi nhap so dien thoai can sua");
@@ -54,7 +55,7 @@ public class PhoneBookManager {
         do {
             System.out.println("nhap vi tri index can cap nhat");
             index = scanner.nextInt();
-        }while (index< phoneBookList.size() );
+        }while (index>= phoneBookList.size() );
        phoneBookList.remove(index);
     }
     public void display(List<PhoneBook> phoneBookList){
