@@ -28,10 +28,12 @@ public class PhoneBookManager {
             System.out.println("nhap vi tri index can cap nhat");
             index = scanner.nextInt();
         }while (index>= phoneBookList.size() );
+        scanner.nextLine();
         System.out.println("nhap ten can sua:");
         String name = scanner.nextLine();
         System.out.println("moi nhap so dien thoai can sua");
         int phoneNumber = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("moi nhap dia chi can sua");
         String address = scanner.nextLine();
         System.out.println("moi nhap email can sua:");
