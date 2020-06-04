@@ -30,45 +30,48 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         String path ="contacts.csv";
-        menuPhoneBook();
-
         int num =0;
-        switch (num){
-            case 1:
-                System.out.println("HIEN THI DANH BẠ: \n");
-                phoneBookManager.display(phoneBookList);
-                break;
-            case 2:
-                System.out.println("THÊM MỚI DANH BẠ\n");
-                phoneBookManager.addPhoneBook(phoneBookList);
-                break;
-            case 3:
-                System.out.println("CẬP NHẬT DANH BẠ \n");
-                phoneBookManager.updatePhoneBook(phoneBookList);
-                break;
-            case 4:
-                System.out.println("XÓA TRONG DANH BẠ \n");
-                phoneBookManager.deletePhoneBook(phoneBookList);
-                break;
-            case 5:
-                System.out.println("TÌM KIẾM TRONG DANH BẠ:\n");
-                phoneBookManager.searchPhoneBook(phoneBookList);
-                break;
-            case 6:
-                System.out.println("GHI VÀO FILE CSV \n");
-                readAndWriteFile.writeFile(path,phoneBookList);
-                break;
-            case 7:
-                System.out.println("DOC FILE CSV \n");
-                List<PhoneBook> list = new ArrayList<>();
-                list =readAndWriteFile.readFile(path);
-                for (PhoneBook phoneBook : list) {
-                    System.out.println(phoneBook);
-                }
-                break;
-            case 8:
-                System.out.println("chào tạm biệt và hẹn gặp lại");
-                break;
+        while (num !=8){
+            menuPhoneBook();
+            num =scanner.nextInt();
+            switch (num){
+                case 1:
+                    System.out.println("HIEN THI DANH BẠ: \n");
+                    phoneBookManager.display(phoneBookList);
+                    break;
+                case 2:
+                    System.out.println("THÊM MỚI DANH BẠ\n");
+                    phoneBookManager.addPhoneBook(phoneBookList);
+                    break;
+                case 3:
+                    System.out.println("CẬP NHẬT DANH BẠ \n");
+                    phoneBookManager.updatePhoneBook(phoneBookList);
+                    break;
+                case 4:
+                    System.out.println("XÓA TRONG DANH BẠ \n");
+                    phoneBookManager.deletePhoneBook(phoneBookList);
+                    break;
+                case 5:
+                    System.out.println("TÌM KIẾM TRONG DANH BẠ:\n");
+                    phoneBookManager.searchPhoneBook(phoneBookList);
+                    break;
+                case 6:
+                    System.out.println("GHI VÀO FILE CSV \n");
+                    readAndWriteFile.writeFile(path,phoneBookList);
+                    break;
+                case 7:
+                    System.out.println("DOC FILE CSV \n");
+                    List<PhoneBook> list = new ArrayList<>();
+                    list =readAndWriteFile.readFile(path);
+                    for (PhoneBook phoneBook : list) {
+                        System.out.println(phoneBook);
+                    }
+                    break;
+                case 8:
+                    System.out.println("chào tạm biệt và hẹn gặp lại");
+                    break;
+            }
         }
+
     }
 }
